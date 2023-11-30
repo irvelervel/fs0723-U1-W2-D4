@@ -153,3 +153,25 @@ const anotherSum = function (num1, num2) {
 }
 
 const myResult = anotherSum(10, 23) // myResult vale 33
+
+// METODI DELLE STRINGHE
+
+const str = 'Oggi abbiamo studiato le funzioni'
+
+const findWord = function (word) {
+  // cerchiamo la parola 'funzioni'
+  const indexOfWord = str.indexOf(word)
+  return indexOfWord
+}
+
+console.log(findWord('le'))
+console.log(findWord('funzioni'))
+console.log(findWord('Oggi'))
+console.log(findWord('Valerio')) // -1
+console.log(findWord('i')) // -1
+
+// findWord trova l'indice di inizio di una parola dentro una stringa
+
+console.log('studiato?', str.slice(13, 21))
+
+console.log(str.replace('funzioni', 'stringhe'))
