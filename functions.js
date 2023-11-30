@@ -83,5 +83,73 @@ function smartSum(num1, num2) {
 // tratterà come num1 e num2
 const finalResult = smartSum(8, 9) + smartSum(2, 87) // 106
 smartSum(1, 2) // 3
+console.log(smartSum(4)) // somma 4 + undefined -> NaN, JS ce lo fa fare lo stesso! :O
 
 smartSum('8', '9') // --> ? '89' :(
+
+function ultimateSum(num1, num2 = 2) {
+  // lo 0 verrà utilizzato come valore di num2 qualora num2 non venisse passato come argomento
+  return num1 + num2
+}
+
+console.log(ultimateSum(2, 3)) // vedrò in console il numero 5
+console.log(ultimateSum(3)) // num1 è 3, ma num2 è 0 (meglio di undefined)
+
+function ultimateGreetings(persona = 'Mario', saluto = 'Buongiorno') {
+  const result = saluto + ', io mi chiamo ' + persona
+  return result
+}
+
+const saluto1 = ultimateGreetings('Salvatore', 'ciao') // 'ciao, io mi chiamo Salvatore'
+const saluto2 = ultimateGreetings('Elisa') // 'Buongiorno, io mi chiamo Elisa'
+const saluto3 = ultimateGreetings('Stefano', 'Ueila') // 'Ueila, io mi chiamo Stefano'
+const saluto4 = ultimateGreetings() // 'Buongiorno, io mi chiamo Mario'
+
+// tutte le variabili saluto* sono STRINGHE!
+console.log(saluto1)
+console.log(saluto2)
+console.log(saluto3)
+console.log(saluto4)
+
+// esempietto di invocazione di sayHelloCustom con dato proveniente da prompt
+// const userName = prompt('Ciao! Come ti chiami?') // 'Mario'
+// console.log(sayHelloCustom(userName))
+
+const arrayOfNames = [
+  'Stefano',
+  'Nicolò',
+  'Alessia',
+  'Dalila',
+  'Jurgen',
+  'Anas',
+]
+
+// sayHelloCustom('Stefano')
+// sayHelloCustom('Nicolò')
+// sayHelloCustom('Alessia')
+// ...
+
+for (let i = 0; i < arrayOfNames.length; i++) {
+  // chiamo la funzione automaticamente 6 volte, ogni volta con un nome diverso!
+  console.log(sayHelloCustom(arrayOfNames[i]))
+}
+
+// function ciao() {
+//   return 100
+// }
+
+const ciao = function () {
+  return 100
+}
+
+console.log(ciao())
+
+// console.log(testVar)
+
+// const testVar = 100
+
+const anotherSum = function (num1, num2) {
+  return num1 + num2
+}
+
+const myResult = anotherSum(10, 23) // myResult vale 33
